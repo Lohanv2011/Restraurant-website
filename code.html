@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Serif:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdea5",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-primary-fixed": "#261900",
+                    "background": "#131313",
+                    "on-error": "#690005",
+                    "on-primary-fixed-variant": "#5d4201",
+                    "surface-container-high": "#2a2a2a",
+                    "secondary-fixed": "#f4dfcb",
+                    "inverse-on-surface": "#313030",
+                    "primary-container": "#c5a059",
+                    "on-secondary-fixed": "#241a0e",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container": "#201f1f",
+                    "on-surface": "#e5e2e1",
+                    "secondary-fixed-dim": "#d7c3b0",
+                    "outline": "#9a8f80",
+                    "on-surface-variant": "#d1c5b4",
+                    "error": "#ffb4ab",
+                    "on-secondary-container": "#c8b5a3",
+                    "tertiary-container": "#a7a5a5",
+                    "surface-dim": "#131313",
+                    "on-background": "#e5e2e1",
+                    "inverse-primary": "#775a19",
+                    "on-tertiary": "#313030",
+                    "surface-tint": "#e9c176",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#524436",
+                    "on-primary": "#412d00",
+                    "on-secondary": "#3a2e21",
+                    "surface-variant": "#353534",
+                    "secondary": "#d7c3b0",
+                    "outline-variant": "#4e4639",
+                    "primary": "#e9c176",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-container-highest": "#353534",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "surface-bright": "#3a3939",
+                    "on-tertiary-container": "#3b3b3b",
+                    "surface": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-container": "#544738",
+                    "on-primary-container": "#4e3700",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "tertiary": "#c8c6c5",
+                    "primary-fixed-dim": "#e9c176",
+                    "tertiary-fixed": "#e5e2e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max-width": "1280px",
+                    "margin-desktop": "64px",
+                    "stack-md": "24px",
+                    "stack-sm": "8px",
+                    "gutter": "24px",
+                    "base-unit": "8px",
+                    "margin-mobile": "16px",
+                    "stack-lg": "48px",
+                    "section-gap": "120px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "display-lg": ["Noto Serif"],
+                    "display-xl": ["Noto Serif"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Noto Serif"],
+                    "headline-lg": ["Noto Serif"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.8) 100%);
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e9c176;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-stone-200/10 shadow-2xl shadow-amber-500/5 h-20 flex justify-between items-center px-6">
+<button class="active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-amber-500">menu</span>
+</button>
+<h1 class="text-xl font-serif tracking-[0.3em] text-amber-500 uppercase">L'ESSENCE</h1>
+<button class="active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-amber-500">calendar_month</span>
+</button>
+</header>
+<main class="pt-0">
+<!-- Hero Section -->
+<section class="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Close-up of an exquisite fine dining dish with edible flowers and microgreens, dark moody lighting with cinematic highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJwjnUY75Ov9tVrr1askrEoo8RbFfYSeRLBwrq-0c_2MOeIDfNRRhpIba-jSuZ2QQnaq-tP9tJiWJmP5UUl0CjIv_HiBkwatmoylwriS-8ajRqhqouQmsL_EZQIg8F3t0VvHwvW-gvfstLAvKVhrukaNBaJKYzQxLNbbzus2B8uQ1v81qR2E1IjnyLPY1T9uh3RqHlUiNPOqQDTM4G5P3mfMCJYQvOKgeIbOPS6QvMniZCcQiySCGVALAxKMcuyruvasEJvIvRxkE"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 flex flex-col items-center space-y-6">
+<span class="font-label-lg text-primary tracking-[0.4em] uppercase opacity-80">Welcome to</span>
+<h2 class="font-display-xl text-primary-fixed drop-shadow-2xl">L'ESSENCE</h2>
+<p class="font-headline-md text-secondary max-w-xs italic">The Art of Fine Dining</p>
+<div class="pt-8">
+<button class="bg-primary text-on-primary-fixed font-label-lg px-10 py-4 rounded-none tracking-widest hover:bg-primary-fixed transition-colors">
+                        BOOK AN EXPERIENCE
+                    </button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+<span class="material-symbols-outlined text-primary">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Menu Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface">
+<div class="text-center mb-16">
+<h3 class="font-display-lg text-primary mb-2">Our Culinary Offerings</h3>
+<div class="w-12 h-0.5 bg-primary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Starters -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-high border border-outline-variant/10 shadow-xl transition-all hover:scale-[1.02]">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" data-alt="Artisanal appetizer plate featuring cured meats, premium cheeses, and micro-herbs on dark slate plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhnl0D-r2OQGuil5uX_y9H96rJWWomfQ7EgMse06-x63qzROGpT1aBKLsPH3y4e3wiznnpPggJAYB0W76bQxUkaFiM3F8X2MJ0WX0Mlw7hx-0__9NOboVGl0T12zjfb4JkjRHtOorrc2q-w2164ZdqmK7pvv2cqW2ksIgEvnmaVRSxJelyT42U0AMR2WRsm8Q775Uwu2Lga5ZKFhXEF5TSABtC8-uIwWBxZhl2XoKp-eHIaOjV96KztFUkLoFx35937SxHfPI37Bc"/>
+</div>
+<div class="p-8 flex justify-between items-end">
+<div>
+<h4 class="font-headline-md text-primary mb-1">Starters</h4>
+<p class="font-body-md text-on-surface-variant">Elegant beginnings to your journey</p>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl">arrow_forward</span>
+</div>
+</div>
+<!-- Main Course -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-high border border-outline-variant/10 shadow-xl transition-all hover:scale-[1.02]">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" data-alt="Pan-seared premium steak served with seasonal roasted vegetables and a rich dark wine reduction sauce" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5dnmdicfv2DCEMEAetQ3TLDtKQ5vyvaMFPj-XfWkWsF17BDAUemN3SCpvZJuqNZ2w1nXSVDCKs06MVUsURR35xvhf_LaBf1_w9uDaINHYEIljuBQYLyxPGjGImxEz16ycKdEWGSZz6xOtuDk-yYz-SSC4mOhGuQNnaUxmuRioa3WWcl51KMepAIPgB_X_w-fMaxZuGJbrve42qt00mQ_uAAvlTm-rJVVx9B9wWFdM2cPuElCOapxOIeZOSRSEOUfhN33T6itZ9K0"/>
+</div>
+<div class="p-8 flex justify-between items-end">
+<div>
+<h4 class="font-headline-md text-primary mb-1">Main Course</h4>
+<p class="font-body-md text-on-surface-variant">The heart of our gastronomic art</p>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl">arrow_forward</span>
+</div>
+</div>
+<!-- Desserts -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-high border border-outline-variant/10 shadow-xl transition-all hover:scale-[1.02]">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" data-alt="Deconstructed chocolate tart with gold leaf garnish and raspberry coulis on a minimal ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMvnSEEZB8fQZ7MmHKR4I7bG-A6tTWcyBb_pUAwR4ZdwUA6ttWEdAQ7GNYASPdNNugBqKD21NPl57eci2_BBk2yJ_pVTMZuHnjBvGkSZe-ed5ILThZj0IC35NYSjkJx7wV6Wn7K4chHMb31D1qc49lmsS3_Zm5l-xTOzpwoRDocIw9xUzj9ariPGwxevrHdkGDhD8GyxYcdzmCs8OyzDvIv6oY6nUrq-0yoigAFG4QEIm0-Q56UzwUe5XdOZ7-QFY-kKHWO1HAA5E"/>
+</div>
+<div class="p-8 flex justify-between items-end">
+<div>
+<h4 class="font-headline-md text-primary mb-1">Desserts</h4>
+<p class="font-body-md text-on-surface-variant">Sweet final notes of perfection</p>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl">arrow_forward</span>
+</div>
+</div>
+<!-- Drinks -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-high border border-outline-variant/10 shadow-xl transition-all hover:scale-[1.02]">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" data-alt="Sophisticated craft cocktail in a crystal glass with smoke effect and orange peel twist in a dark bar setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB488MxCWJG0yJ12tXefh6v2L-L44l45SLXr-kgYg--dhXQdZHZlAjt-yKs_SLAt7lYAZDemWKl_yxbO-BapboASIt-KDBjjvudvcH1JNCoMhr8vwKlioMlzz_T6tdtliHgucdNyRSaBa_dG7WzbDziiwolJrnCi6eWy3s4juLYQqJy5IC_n101d9pzpqZD91rAPKmA9uTGyCfXs7mr9hBD6uLf6HvGKnjQPaK4JnyU2cs8YKPpb3nZz0EYlUlE4PUK6v7wMbaiaz0"/>
+</div>
+<div class="p-8 flex justify-between items-end">
+<div>
+<h4 class="font-headline-md text-primary mb-1">Drinks</h4>
+<p class="font-body-md text-on-surface-variant">Curated wines and signature elixirs</p>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us: Heritage Section -->
+<section class="py-section-gap px-margin-mobile bg-surface-container-low relative">
+<div class="max-w-4xl mx-auto text-center space-y-8">
+<span class="font-label-lg text-primary-container tracking-widest uppercase">Our Heritage</span>
+<h3 class="font-display-lg text-on-surface">A Legacy of Taste</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left mt-12">
+<div class="space-y-6">
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            Founded in the spirit of uncompromising quality, L'Essence is more than a restaurant; it is a sanctuary for those who appreciate the finer details of culinary craftsmanship. 
+                        </p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            Our philosophy centers on the purity of ingredients, the precision of technique, and the warmth of genuine hospitality. Every dish tells a story of tradition reimagined through a modern lens.
+                        </p>
+<button class="border-b border-primary text-primary font-label-lg pb-1 tracking-widest hover:text-primary-fixed transition-colors">
+                            READ THE FULL STORY
+                        </button>
+</div>
+<div class="relative">
+<img class="rounded-2xl shadow-2xl" data-alt="Black and white portrait of a master chef carefully plating a dish with tweezers in a professional kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBisWBkAHEvanm8LINslAjYEYaauhDPoxLlLcBD-hacm5f5tnHQKUTK5WJt7qWD5-IKp0Z86sqUZOgnoa8NwvUamiDZnU0JKgQ1pqZH5REB3W49osfaJT7rQa3w0Mesl-srHhBk_u-PmTx2r8Dtco_vFeSAeD3WqvxhYS-hBfHNofghqdEfRef-vps9waD84NxeVDq0YhONlVrOBdYrsc_9IN3dFDfdgY8fOKgQ1v97qZCh-LTHtEsTaeQGWpvORU5u66de5iD9AcM"/>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery: Visual Journey -->
+<section class="py-section-gap bg-surface">
+<div class="text-center mb-16 px-margin-mobile">
+<h3 class="font-display-lg text-primary mb-2">Visual Journey</h3>
+<p class="font-label-lg text-on-surface-variant tracking-widest">CAPTURED MOMENTS AT L'ESSENCE</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+<div class="aspect-square overflow-hidden group">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="Close up of a luxury table setting with fine china, crystal glassware and silver cutlery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVh57_PI54kj3ar1B6Wjtfl0PWcF50GZOnIsoAc8qYttjOdTqKFzUaibBIEmnjX9ybJzhCpYyiI81g7hQs1YYlGswoUELPhsXSLZwegpgxlRjr_CVa52jOQ4I_0TdTagtd2L0I3q3CvU0ryYrAhnO1qxNyJbFXZqMfzz90jGkZ3uZypVbXEb0eCuHJf5QOoWQT79mIzvr-G_WybYp02Xw_iUwovJY9IF2bVcaD9qdF6W0AKldGOeqYpLvbbfZLJFKurBVuBy_H7Rk"/>
+</div>
+<div class="aspect-square overflow-hidden group">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="Gourmet seafood dish with citrus garnish and vibrant colors on a dark plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMrrSyDRgl4I5HokhPIi0JsF1y0WmeKPIzINogzpInYefcsHMi97DEk8_NDqK1_UNexAkwJtwhUPVKd3OfmK5G7PeJBL21s7ganmN4CETTKb2gaKiPp43GLl_YG7Nx6ab16Y5l91mG1B1SP5MEsxqLAiIG2FVXyZ9TcR4huOqxMqd98OfbIzB5K-cmFXy4Bdkkix6-ZRNE1nnpswpFDaomeMdLJ00cpTdxP9NWiVghpU7qL7hhuEQP0WUw0F-797CukEEF77bPKTg"/>
+</div>
+<div class="aspect-square overflow-hidden group">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="Interior view of the restaurant dining room with warm ambient lighting and leather seating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm08TqEsPd41AZ0yi9Zu44CvR_gpJXnVzzNykAXPY10B2hpF2DYlaRDjzr8RKl-FpMtIQmbI5uqBOP6Yr2BXoCDZvpG_YA1ieLtYtsVj-KJejbtjtDCWUGGlbYz-R-7NmRafyAEF0fNa8jG5rvvGQ1deiEe4rFN3Okx9R87eU1_wvpMPEgquF-gAmTJ_JEIkZn1y03gUIhvPNK8wVicyPahHF62wXIEYH_4XQSUNc2xgHsGwFG3jrItAnpQJX3lmTVpSpfzD3z6D8"/>
+</div>
+<div class="aspect-square overflow-hidden group">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="Sommelier pouring red wine into a decanter in a dimly lit wine cellar environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADHM6kxdbmD0S55qcXYVGJFujbyF2eUO3hJ-BlsI34aMUsBQKVqcf8Uq6Bxewdgu4kwJ2l-jHcaKf7DfchBzVEqrsNqlkaGVr27gfDe51UUpuc9-MNDChPFY1xSheuYwkG2ZRNppM0pEGSpbNegdoyGJIZE6vJCa8HoSnmWwHvZiGqnf8oyiIF7GvMneoDyyT_P8apZ9TJyjSH09wYhumk-wN6PAF8ejtr6lOb03eHcQXDyzOaDyKcWmbz9ri0WRX96u2jMBXapNo"/>
+</div>
+<div class="aspect-square overflow-hidden group">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="Exotic dessert with edible flowers and molecular gastronomy foam elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt-U8P0KPtGIHzhB0TOcEugTlBqMbZPyrhq-13lRer5gmjJsi0CPQpiOrG6FrFjxl5MbhZ1FsJ_oAAhlLeGCOzznYIlfMDTKpfNLzRI18cB_v9pX2FBarEB66PS3tW9P5tkVOEVyt2VB1zyPjIG0jpQ41RI6v47tNYgaqPQuOtcfviB2AFSB6wwM7TRxeyEIJZLuAkSsp46C0lgvUMvQZ7JXccprZ4dsj5DZ7h6GE6xV3GYU6kCZW3jdL-Zok6B2_P_z5Pp19nBrI"/>
+</div>
+<div class="aspect-square overflow-hidden group">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="Chef working with flames in a high-end restaurant kitchen, dramatic action shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoHWbSLvJE7RTpRcu02WuaVUd1UDCzQkR4--d0sN4YiX4eWZ7lZm6nofDgjsE5JVfPMT2eRRoUi0BFhdTwcWCtwitmdef2yEl8GTKxMHCKf4wm5qPMDKDxNkHSYXV-bC52q1yQiDb_t3bQZgbIXB8X042MEN4c0M8iKv2X98FrpGJnckbkjVqlxPdYTduEZAsHmqVVMR6li5MUbg61GlmdbN8n_WEz1sw7kflvR_G69rSF_rGR9L0Ll3I21HY8NNz7-rviujGDz5M"/>
+</div>
+<div class="aspect-square overflow-hidden group">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="Fresh organic vegetables from the garden arranged artistically on a wooden surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACcZFY5nx8fJwHniaKIUaCfVCHaJCPRAdj0qE_TgFtQERw4Ot13SKeWRLkmGGjrBJAwDdm85XDE4SLtxLStltJthyi6l8sKK3027sMdvDqzZhgbue68GNXqy8T8jGA_2XnCXDcAGSA8s-SRcxcPxc4OAj3fFx_Vi_F0NkQNvs27wQbkD74YdZvEM4jfloLBduHJI9czPiaTYf4jhnPkX9TxGZkaHSNUh1PaB6kWjhPGmLNmPJHcl07JVhPNzXYfCo0zU5_YWp5xc0"/>
+</div>
+<div class="aspect-square overflow-hidden group">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="Close-up of a pastry chef dusting powdered sugar onto a freshly baked dessert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDABHyStq3VEDDa3TYatwDV_gXIxcmt4Y4rduIoWI9N6vyi72pKRmAMvZJWPEht1m3bSfMTOkWxBPCThqC1pa8ecfOnA81VM85ZvtzIWUsbYYYgkeHDTrnMiL9TV1rcCjheBUWBbebgEsaqcGtBltsuOdygc6rkvi5meOPI-1AlBIZ9OIGGeXQ91AquItAuBo7r55cHQl9HT11uXDtp2-eRbS7K6n_9H5OocTkAhxeB5BHPOSzyVhzuUJdn72KzTBMc7YTwpaIPnbU"/>
+</div>
+</div>
+</section>
+<!-- Reservation Section -->
+<section class="py-section-gap px-margin-mobile bg-surface-container-lowest">
+<div class="max-w-2xl mx-auto border border-primary/20 p-8 md:p-16 rounded-2xl bg-surface-container shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+<div class="text-center mb-12">
+<h3 class="font-display-lg text-primary mb-4">Table Reservation</h3>
+<p class="font-body-md text-on-surface-variant italic">Secure your evening of refinement</p>
+</div>
+<form class="space-y-8">
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-primary text-on-surface transition-colors" placeholder="Full Name" type="text"/>
+<div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-primary text-on-surface transition-colors appearance-none" type="date"/>
+<div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
+</div>
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-primary text-on-surface transition-colors appearance-none" type="time"/>
+<div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
+</div>
+</div>
+<div class="relative group">
+<select class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-primary text-on-surface transition-colors appearance-none">
+<option value="">Number of Guests</option>
+<option>2 Guests</option>
+<option>4 Guests</option>
+<option>6 Guests</option>
+<option>Private Event</option>
+</select>
+<div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-label-lg py-5 tracking-[0.2em] uppercase hover:bg-primary transition-all active:scale-[0.98] mt-4">
+                        CONFIRM RESERVATION
+                    </button>
+</form>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap px-margin-mobile bg-surface text-center">
+<h3 class="font-display-lg text-primary mb-12">Get in Touch</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+<h5 class="font-label-lg text-on-surface tracking-widest uppercase">Address</h5>
+<p class="font-body-md text-on-surface-variant">124 Avenue des Champs-Élysées,<br/>75008 Paris, France</p>
+</div>
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-3xl">call</span>
+<h5 class="font-label-lg text-on-surface tracking-widest uppercase">Reservations</h5>
+<p class="font-body-md text-on-surface-variant">+33 1 42 56 32 00<br/>concierge@lessence.com</p>
+</div>
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-3xl">share</span>
+<h5 class="font-label-lg text-on-surface tracking-widest uppercase">Social</h5>
+<div class="flex justify-center space-x-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Facebook</a>
+</div>
+</div>
+</div>
+<div class="mt-20 opacity-30">
+<img class="w-full h-64 object-cover grayscale brightness-50 contrast-125 rounded-xl" data-alt="Abstract aerial view of Paris streets at night with glowing city lights" data-location="Paris" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRywckpstd1y42CgTUHl_EsVjRgOWhzkQMzvZVp5jhbnYXL-QhJG-mfU8QqSLTWvd90C9iJ3yPFzzb3vaLFw8y8DVSZ5XNw9QXrwxLtbTYdVRy2COzA9J4WUWRhY4knXULEoBZqKtuL8te9MfqhYg-Nwba3PBWMAajS_ObXns903MyLFha3lAIFNrhPhfiqLaiBVGBsfS9PtmMVp-GSdHl9ODPwDP1e_n_oVPwdqcu-o_KJXQQ4bVt_UPepQdWF8CfE1gQnrLXfiI"/>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center py-4 px-2 bg-neutral-950/95 backdrop-blur-lg border-t border-stone-200/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-amber-500 scale-105 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-serif text-[10px] uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="font-serif text-[10px] uppercase tracking-tighter">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500" href="#">
+<span class="material-symbols-outlined">event</span>
+<span class="font-serif text-[10px] uppercase tracking-tighter">Reserve</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-serif text-[10px] uppercase tracking-tighter">Account</span>
+</a>
+</nav>
+<!-- Desktop Navigation Drawer (Simulated Sidebar for Context) -->
+<aside class="hidden lg:flex fixed left-0 top-0 h-full w-20 flex-col items-center py-10 bg-neutral-950 border-r border-stone-200/10 z-[60]">
+<div class="text-amber-500 font-serif text-2xl mb-20 -rotate-90 origin-center whitespace-nowrap tracking-[0.5em]">L'ESSENCE</div>
+<div class="flex flex-col space-y-10 text-stone-500">
+<span class="material-symbols-outlined hover:text-amber-500 cursor-pointer transition-colors">history_edu</span>
+<span class="material-symbols-outlined hover:text-amber-500 cursor-pointer transition-colors">menu_book</span>
+<span class="material-symbols-outlined hover:text-amber-500 cursor-pointer transition-colors">liquor</span>
+<span class="material-symbols-outlined hover:text-amber-500 cursor-pointer transition-colors">photo_library</span>
+</div>
+</aside>
+<footer class="bg-surface-container-lowest py-10 text-center border-t border-outline-variant/10 mb-20 md:mb-0">
+<p class="font-label-sm text-stone-600 tracking-widest">© 2024 L'ESSENCE. ALL RIGHTS RESERVED.</p>
+</footer>
+</body></html>

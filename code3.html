@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#c8c6c5",
+                    "primary-fixed-dim": "#e9c176",
+                    "tertiary-fixed": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "on-tertiary-container": "#3b3b3b",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "secondary-container": "#544738",
+                    "primary-fixed": "#ffdea5",
+                    "tertiary-container": "#a7a5a5",
+                    "primary": "#e9c176",
+                    "secondary-fixed": "#f4dfcb",
+                    "on-primary-fixed": "#261900",
+                    "on-primary-container": "#4e3700",
+                    "error": "#ffb4ab",
+                    "surface-container-highest": "#353534",
+                    "on-secondary-fixed-variant": "#524436",
+                    "background": "#0A0A0A",
+                    "outline-variant": "#4e4639",
+                    "surface-variant": "#353534",
+                    "surface-bright": "#3a3939",
+                    "secondary": "#d7c3b0",
+                    "on-surface": "#e5e2e1",
+                    "inverse-surface": "#e5e2e1",
+                    "inverse-primary": "#775a19",
+                    "on-background": "#e5e2e1",
+                    "surface-tint": "#e9c176",
+                    "primary-container": "#c5a059",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-high": "#2a2a2a",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-primary": "#412d00",
+                    "on-surface-variant": "#d1c5b4",
+                    "inverse-on-surface": "#313030",
+                    "secondary-fixed-dim": "#d7c3b0",
+                    "surface": "#0A0A0A",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container": "#201f1f",
+                    "surface-container-low": "#1c1b1b",
+                    "on-secondary": "#3a2e21",
+                    "outline": "#9a8f80",
+                    "surface-dim": "#131313",
+                    "on-error": "#690005",
+                    "on-secondary-fixed": "#241a0e",
+                    "on-tertiary": "#313030",
+                    "on-primary-fixed-variant": "#5d4201",
+                    "on-secondary-container": "#c8b5a3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max-width": "1280px",
+                    "gutter": "24px",
+                    "stack-lg": "48px",
+                    "margin-desktop": "64px",
+                    "section-gap": "120px",
+                    "margin-mobile": "16px",
+                    "stack-md": "24px",
+                    "stack-sm": "8px",
+                    "base-unit": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Noto Serif"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Noto Serif"],
+                    "label-lg": ["Inter"],
+                    "display-lg": ["Noto Serif"],
+                    "display-xl": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-gold { color: #C5A059; }
+        .bg-gold { background-color: #C5A059; }
+        .border-gold-soft { border-color: rgba(197, 160, 89, 0.1); }
+        .glass-card { background: rgba(26, 26, 26, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(217, 197, 178, 0.1); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/90 backdrop-blur-md border-b border-[#D9C5B2]/10 shadow-[0_10px_40px_-15px_rgba(197,160,89,0.05)]">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#C5A059] cursor-pointer" data-icon="menu">menu</span>
+<span class="text-2xl font-['Noto_Serif'] font-light italic text-[#C5A059] tracking-widest">L'Essence</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-['Noto_Serif'] font-light tracking-widest">
+<a class="text-[#D9C5B2] hover:text-[#C5A059] transition-colors" href="#">Home</a>
+<a class="text-[#D9C5B2] hover:text-[#C5A059] transition-colors" href="#">Menu</a>
+<a class="text-[#D9C5B2] hover:text-[#C5A059] transition-colors" href="#">Reservations</a>
+<a class="text-[#C5A059] border-b border-[#C5A059] pb-1" href="#">About</a>
+</nav>
+<button class="bg-primary-container text-on-primary px-8 py-2 rounded-none font-label-lg hover:opacity-90 transition-all duration-300">
+                Reserve
+            </button>
+</div>
+</header>
+<main class="pt-32">
+<!-- Heritage Section -->
+<section class="max-w-screen-2xl mx-auto px-8 md:px-16 mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-6 lg:col-span-5 space-y-stack-md">
+<span class="font-label-lg text-primary tracking-[0.3em] uppercase">The Legacy</span>
+<h1 class="font-display-xl text-on-background leading-tight">Heritage of <span class="italic font-light">Refinement</span></h1>
+<div class="w-12 h-px bg-primary/40"></div>
+<p class="font-body-lg text-on-surface-variant leading-relaxed opacity-90">
+                        Founded in 1984 by Chef Julian Vasseur, L'Essence began as a humble aspiration to redefine the sensory landscape of French cuisine. Today, it stands as a sanctuary of gastronomic excellence, where every ingredient is selected with a reverence for the terroir.
+                    </p>
+<p class="font-body-md text-on-surface-variant leading-relaxed italic opacity-80">
+                        "We do not merely serve dishes; we curate memories through the alchemy of fire, water, and spirit."
+                    </p>
+<div class="pt-stack-md">
+<p class="font-headline-md text-on-surface">Chef Julian Vasseur</p>
+<p class="font-label-sm text-primary uppercase tracking-widest">Executive Chef &amp; Founder</p>
+</div>
+</div>
+<div class="md:col-span-6 lg:col-span-6 lg:col-start-7 relative">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-none shadow-2xl relative z-10">
+<img alt="Portrait of Chef Julian Vasseur" class="w-full h-full object-cover" data-alt="distinguished older chef in a clean white uniform standing in a professional kitchen with soft warm ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnh2OS5kF1tBgSdT3QlgFmX7cAZVgD-hvdBgrxA5xhYiqV44rtVMnaTU75Pr0I8iSnkVJ3ijzNzICJFvQjVJgeBayRsxKB2lSLrrn25XG4aIMy4Z8h1qLt7gJw4vKWLO6NaUVGBHVffAI56tVKpTqtrb5WEKIDKSC9kE7bt_51CLv4hd4qASU6ZojbQXY9f14o9ZYGpx8uT5uWy7cY-1IjXxrb2sLRZ25Pwm6BFL2oO8hRTQwMl_Q61zI5gqNNq33f9tX32k_cOQw"/>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-10 -right-10 w-64 h-64 border border-primary/20 -z-0 hidden lg:block"></div>
+</div>
+</div>
+</section>
+<!-- Values Row -->
+<section class="bg-surface-container-low py-24 mb-section-gap">
+<div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="tempest">storm</span>
+<h3 class="font-headline-md text-on-surface">Artisanal Sourcing</h3>
+<p class="font-body-md text-on-surface-variant max-w-xs mx-auto">Direct partnerships with micro-producers ensuring the peak of seasonal integrity.</p>
+</div>
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="restaurant">restaurant</span>
+<h3 class="font-headline-md text-on-surface">Culinary Precision</h3>
+<p class="font-body-md text-on-surface-variant max-w-xs mx-auto">Mastery of classical techniques met with innovative contemporary vision.</p>
+</div>
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="wine_bar">wine_bar</span>
+<h3 class="font-headline-md text-on-surface">Vintner's Selection</h3>
+<p class="font-body-md text-on-surface-variant max-w-xs mx-auto">A cellar holding rare vintages curated to harmonize with every course.</p>
+</div>
+</div>
+</section>
+<!-- Visual Journey Gallery -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-section-gap">
+<div class="text-center mb-16 space-y-4">
+<span class="font-label-lg text-primary tracking-[0.3em] uppercase">Gallery</span>
+<h2 class="font-display-lg text-on-background">A Visual Journey</h2>
+<div class="w-24 h-px bg-primary/30 mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[1000px]">
+<!-- Bento Grid Style Gallery -->
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden">
+<img alt="Main Dining Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="luxurious restaurant interior with dark wood tables, golden pendant lights, and large windows overlooking a city at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw07p3IP5-KlrT1vnHFKjI_nb6LKwJOc1fcX85yK54k-l8Y5oqjPEcqPwugufpNPZ-VK90uQ29xbC5LXjg5XeIR8-WC9fo427m8MM0BuE4iMY3kjadzwsQiYF4CKVsWVTKS318PHIcUwHUwU4Cxoea21PZ_ibn0HCtmIvx0KJbliGeXixD8hdDzhYYvqcuaWtOYzA63-OStw71D1TrBOx38F5h05xPsFxcDkiFC9KdSR42anbxb0qI7SYqvOz6J7usBUzV_2oBncY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+<p class="font-headline-md text-white">The Grand Salon</p>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden">
+<img alt="Signature Dish 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="exquisite gourmet dish with scallops and edible flowers arranged artistically on a dark ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT3Ch_tllAlwePAnKwcwmWJIJmjimpBpqzAFOrqGo3fSnw0t-opo97LfzWiMRHIRf6cKHMzecZgklljY9Jr1E48XUsIYbiBKvFO35a9G3XbkKf6tAylzutSi4tJjZC3rGsHrnHS-Yw6VnXLWUOxGHwElW1At8qytJr5prNYttqf_VZ5V2wGd1Hx_rGjR0dQy1KIQn26E0yDlCc-AAn42R7gdiiuTbUwiKpRB3SIWjIWMVTTuhlpWcgfG-VmtSzDY7LuXeILw0tBE4"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="font-label-lg text-white tracking-widest uppercase">Cuisine</span>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden">
+<img alt="Wine Cellar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="rows of vintage wine bottles in a temperature-controlled dark wood cellar with atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClCEINuNdp-ph23rf1m-FyzpuaMScD9g4VPvHzv8uDrxSCE3jOmyhDDfhCPJkY7N5XYHqZguEOxv7DagpmBABuvdFiuwOTKEl2jr5U6IIjiC_hdpZqv06BLdGubogO7diGY-MsSQ0jyQyovSV2Ve7Fftu3vplIXR3q0PGZvIEXP9nDtZW5VrwCJ51FuibM4FaRuSUy26JKyC564zkWr4aX-ljAG7a0qVdWXgIwVh3Q17EzZcbkwHo3LU8MoCrOCS7cslIqK5-4qsE"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="font-label-lg text-white tracking-widest uppercase">Cellar</span>
+</div>
+</div>
+<div class="md:col-span-2 md:row-span-1 relative group overflow-hidden">
+<img alt="Chef at work" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="close up of chef's hands delicately garnishing a plate in a professional kitchen with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAusC2fPqu0fC-aTEU_84DfBCQe_GPVJV3pm2y4mpnxf5xKq021Y0rmXW9SRPEfLp6X1TajN4ePYqZ4S2dFMkQ43i329mSUT79y2QVcr1YBoLe0SAxS2M_00D9YWS-BD3xpMllrzCWRkayQYrkR0a5rX-S_N2cB9gLD66OmB7b12e6ZrHHoMYHZWRUhRxqHGr0j-H_9ufeC7SilrZjYE6N9eTUD56oExgP5ltl2WxcGyQr7f3_BVDCUeaez7T0yyGG5RpyVcYFDs5g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+<p class="font-headline-md text-white">The Craft</p>
+</div>
+</div>
+</div>
+<!-- Additional Asymmetric Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 h-[400px]">
+<div class="relative group overflow-hidden">
+<img alt="Table Setting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="close-up of elegant table setting with fine china, crystal glasses, and polished silver cutlery on white linen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkl5MdykL_FdZ0i82VEBaiMzwYLUFeolkEvwknmdyBm8Sp91otw9DzDenMoPEBs0U1Twq2BH0KPrSo5XUW7b08nn2zC66WymSqJT3JOUVd_4T5mMj11j6FVuuN6qFP64sLcrmQYh0Y01zvPyJlXYdkVhCITN1CKzsaDeKVGDJju169WXuzcsFQ5ZmzdzZdl5HMB3Sa391gnFh8yDjF5zBTTipS9HBuPKd00aoAN1ly1SARAW0LGvJ_DlSyLJcIJqcXrASSYNNsveI"/>
+</div>
+<div class="relative group overflow-hidden">
+<img alt="Atmosphere" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="moody interior shot of a cocktail bar with warm backlighting and soft bokeh of spirits bottles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRhsrKUQxalVFBAYtqSdy_ClyG03uqQNLe8npE6KMjtXR0yDKMd1b34eL-JvTZ7Uc2F44G8C5575QCL7LVgv-xoxFfk-czTp_bs-nX21TMekDhxYgOJ7j3Nd5cXwrbKxbsAiemrQg-09W1kMTiAL8so8xGj75L_Qzls7S1KPtljPRiSgcVIs14xHQT455LQ2RWPQUKgYYDYFnOCiNeJablbykGzMAfSi846STPpXpy8_iIQz9AS74QhNc9wUgbLK5t-xDFOy0CNJE"/>
+</div>
+<div class="relative group overflow-hidden">
+<img alt="Dish Detail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="high-end dessert with dark chocolate and gold leaf on a minimalist plate with soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPA7tIcPNpgYv8Rhe68UbERrI0ZWWvx4ngm9XWlQxJQcv1BrBUdV4KRpl0qvnJGr4NsI6LcVFY6lzZlcoYNiT6ke7A8tnBG10rL77Qmcw2U-2pilH6W9KWyyUDS9LP7xZIneZ04LHZxjlKlTOBg84yt1jOQZjhSahS-RnrLdu-Aex80lvdmqx6Q-SjKPiIycrTS_urMe0fJ7LnbgXIvFbWSp9fCjb49HC65CrUe_5qXKPhlxFeVER__qjhCv9-3JK1cWnlc4MTOao"/>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="max-w-screen-xl mx-auto px-8 mb-section-gap">
+<div class="glass-card py-20 px-12 text-center space-y-8">
+<h2 class="font-display-lg text-on-background">Experience L'Essence</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto italic">Reservations are recommended up to three months in advance to ensure your preferred date and time.</p>
+<div class="flex justify-center gap-6 pt-4">
+<button class="bg-primary-container text-on-primary px-12 py-4 font-label-lg hover:opacity-90 transition-all">Book Your Table</button>
+<button class="border border-primary text-primary px-12 py-4 font-label-lg hover:bg-primary/10 transition-all">View Our Menu</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0A0A0A] border-t border-[#D9C5B2]/10">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 mt-20 max-w-screen-2xl mx-auto">
+<div class="flex flex-col items-center md:items-start space-y-4 mb-8 md:mb-0">
+<span class="font-['Noto_Serif'] text-[#C5A059] text-xl tracking-widest">L'Essence</span>
+<p class="font-['Inter'] font-light tracking-tight text-sm text-[#D9C5B2]/60">© 2024 L'Essence Culinaire. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-['Inter'] font-light tracking-tight text-sm">
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">Home</a>
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">Menu</a>
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">Reservations</a>
+<a class="text-[#C5A059]" href="#">About</a>
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="flex gap-4 mt-8 md:mt-0">
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

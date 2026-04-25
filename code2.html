@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#c8c6c5",
+                      "primary-fixed-dim": "#e9c176",
+                      "tertiary-fixed": "#e5e2e1",
+                      "error-container": "#93000a",
+                      "on-tertiary-container": "#3b3b3b",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "secondary-container": "#544738",
+                      "primary-fixed": "#ffdea5",
+                      "tertiary-container": "#a7a5a5",
+                      "primary": "#e9c176",
+                      "secondary-fixed": "#f4dfcb",
+                      "on-primary-fixed": "#261900",
+                      "on-primary-container": "#4e3700",
+                      "error": "#ffb4ab",
+                      "surface-container-highest": "#353534",
+                      "on-secondary-fixed-variant": "#524436",
+                      "background": "#131313",
+                      "outline-variant": "#4e4639",
+                      "surface-variant": "#353534",
+                      "surface-bright": "#3a3939",
+                      "secondary": "#d7c3b0",
+                      "on-surface": "#e5e2e1",
+                      "inverse-surface": "#e5e2e1",
+                      "inverse-primary": "#775a19",
+                      "on-background": "#e5e2e1",
+                      "surface-tint": "#e9c176",
+                      "primary-container": "#c5a059",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-high": "#2a2a2a",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "on-primary": "#412d00",
+                      "on-surface-variant": "#d1c5b4",
+                      "inverse-on-surface": "#313030",
+                      "secondary-fixed-dim": "#d7c3b0",
+                      "surface": "#131313",
+                      "surface-container-lowest": "#0e0e0e",
+                      "surface-container": "#201f1f",
+                      "surface-container-low": "#1c1b1b",
+                      "on-secondary": "#3a2e21",
+                      "outline": "#9a8f80",
+                      "surface-dim": "#131313",
+                      "on-error": "#690005",
+                      "on-secondary-fixed": "#241a0e",
+                      "on-tertiary": "#313030",
+                      "on-primary-fixed-variant": "#5d4201",
+                      "on-secondary-container": "#c8b5a3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max-width": "1280px",
+                      "gutter": "24px",
+                      "stack-lg": "48px",
+                      "margin-desktop": "64px",
+                      "section-gap": "120px",
+                      "margin-mobile": "16px",
+                      "stack-md": "24px",
+                      "stack-sm": "8px",
+                      "base-unit": "8px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Noto Serif"],
+                      "label-sm": ["Inter"],
+                      "headline-md": ["Noto Serif"],
+                      "label-lg": ["Inter"],
+                      "display-lg": ["Noto Serif"],
+                      "display-xl": ["Noto Serif"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                      "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-[#0A0A0A]/90 backdrop-blur-md text-[#C5A059] font-['Noto_Serif'] font-light tracking-widest fixed top-0 z-50 w-full border-b border-[#D9C5B2]/10 shadow-[0_10px_40px_-15px_rgba(197,160,89,0.05)]">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="material-symbols-outlined text-2xl cursor-pointer" data-icon="menu">menu</span>
+<nav class="hidden md:flex gap-8">
+<a class="text-[#D9C5B2] hover:text-[#C5A059] transition-colors text-label-lg" href="#">Home</a>
+<a class="text-[#C5A059] border-b border-[#C5A059] pb-1 text-label-lg" href="#">Menu</a>
+<a class="text-[#D9C5B2] hover:text-[#C5A059] transition-colors text-label-lg" href="#">Reservations</a>
+<a class="text-[#D9C5B2] hover:text-[#C5A059] transition-colors text-label-lg" href="#">About</a>
+</nav>
+</div>
+<h1 class="text-2xl font-serif italic text-[#C5A059]">L'Essence</h1>
+<button class="bg-[#C5A059] text-[#0A0A0A] px-8 py-2 font-label-lg rounded-sm hover:bg-[#D9C5B2] transition-colors uppercase tracking-widest">Reserve</button>
+</div>
+</header>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="relative h-[530px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="Moody dark restaurant interior with soft ambient gold lighting on white tablecloths and crystal glassware" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1KqisboIp9RcrEHuRFK9c-CszGOF-QtQcIm99UFSaNz3xK_ZDBCgljxGq1pdyweA4lRgzR347R3PY_1YKQGc5a-YVBPyNPLCJONjrZZqwLQhefpFbl0Bv9tIKUUsEKjvBlgLvPOU8YD_xT7EWr3IT343QIWvDYWto-tI5ewH3ZHBS-djYLL6RQM4FRU5AU-XfhbIYvq-f1q4TEf-KVn89wi1vh9uRf_aFJAQ5gKE9LV1MCmmgc49SlB8SiQ0kc_n6OxB7BNSRdRM"/>
+<div class="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A]"></div>
+</div>
+<div class="relative z-10 text-center space-y-4">
+<span class="text-primary-fixed-dim font-label-lg tracking-[0.4em] uppercase">The Culinary Gallery</span>
+<h2 class="font-display-xl text-[#C5A059] italic">Le Menu</h2>
+<div class="w-24 h-[1px] bg-[#C5A059] mx-auto mt-8"></div>
+</div>
+</section>
+<!-- Menu Navigation (Anchors) -->
+<nav class="sticky top-24 z-40 bg-[#0A0A0A] py-6 border-b border-[#D9C5B2]/5">
+<div class="flex justify-center gap-12 text-label-lg tracking-widest uppercase text-[#D9C5B2]/60">
+<a class="hover:text-[#C5A059] transition-colors" href="#starters">Starters</a>
+<a class="hover:text-[#C5A059] transition-colors" href="#mains">Main Course</a>
+<a class="hover:text-[#C5A059] transition-colors" href="#desserts">Desserts</a>
+<a class="hover:text-[#C5A059] transition-colors" href="#drinks">Drinks</a>
+</div>
+</nav>
+<!-- Starters Section -->
+<section class="max-w-screen-xl mx-auto px-8 py-section-gap" id="starters">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-[#D9C5B2]/10">
+<img class="w-full h-full object-cover" data-alt="Artfully plated scallops with microgreens and citrus foam on a dark slate plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR1GG0R4voTiQDtkXlpNsYcPBHLzT50eP_Y5nSCsSX2V5SsCHC59GeRUQ9N_J-ocCByQN0TB9tzzyGalq3vOVUXJT_0Xw76kR8w_dSdyby6JjgRHw7fQoBo8JtE5KysfPv_yvkP3dBn0he8IdQs_qs7lEv7EKaMpzQ9_8Yhanfp14oC2OnD9RJuoOMvSMARjN4zsSUpF7yQW8C4FacP6Li9Gz9mSAgiS-uiodaxPNURLwXA3Y79GjKtME4gw_lwz3STlOVMEmQ5Gg"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-48 rounded-xl overflow-hidden border border-[#D9C5B2]/20 hidden md:block">
+<img class="w-full h-full object-cover" data-alt="Close up of fresh oysters with champagne mignonette and lemon wedges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLmpyrOMChoniwsr8bS4ao2XnwZeE_j2lcc8sld1VGRLhpcLvnMagfE-Lyz_bHPoTkElmvKZ2a_d8upgYYcR_mGmtniFNrWok7UAu0Ttz0czJKn7H4Jhfky9zq187jgmgijFbgfyIdYBWSFiE_7zDxPio_PGsT3EPyZM8e_8FM5jRBhdasFy84F56SPAQS6WXtbFrXc1DIse1nkSDybz1xTTF3d2rh1tX_GlVOSNno3ofts86d3JiOLtelq2eGLEFMgmLlkwmg7aY"/>
+</div>
+</div>
+<div class="lg:col-span-7 space-y-12">
+<div class="space-y-2">
+<h3 class="font-display-lg text-[#C5A059]">Les Entrées</h3>
+<p class="text-secondary font-body-lg italic opacity-70">A prelude to the symphony.</p>
+</div>
+<div class="space-y-8">
+<div class="flex justify-between items-end border-b border-[#D9C5B2]/10 pb-4 group">
+<div class="space-y-1">
+<h4 class="font-headline-md text-on-surface group-hover:text-primary transition-colors">Wagyu Beef Carpaccio</h4>
+<p class="text-tertiary font-body-md italic">Truffle emulsion, caper berries, 36-month aged parmesan</p>
+</div>
+<span class="font-headline-md text-primary-fixed-dim">34</span>
+</div>
+<div class="flex justify-between items-end border-b border-[#D9C5B2]/10 pb-4 group">
+<div class="space-y-1">
+<h4 class="font-headline-md text-on-surface group-hover:text-primary transition-colors">Heritage Heirloom Tomato</h4>
+<p class="text-tertiary font-body-md italic">Burrata di bufala, basil oil, balsamic reduction, pine nut crumble</p>
+</div>
+<span class="font-headline-md text-primary-fixed-dim">28</span>
+</div>
+<div class="flex justify-between items-end border-b border-[#D9C5B2]/10 pb-4 group">
+<div class="space-y-1">
+<h4 class="font-headline-md text-on-surface group-hover:text-primary transition-colors">Pan-Seared Foie Gras</h4>
+<p class="text-tertiary font-body-md italic">Caramelized fig, brioche toast, port wine reduction</p>
+</div>
+<span class="font-headline-md text-primary-fixed-dim">42</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Course - Bento Style Grid -->
+<section class="bg-surface-container-lowest py-section-gap" id="mains">
+<div class="max-w-screen-xl mx-auto px-8">
+<div class="text-center mb-16 space-y-4">
+<h3 class="font-display-lg text-[#C5A059]">Plats Principaux</h3>
+<p class="text-secondary font-body-lg italic max-w-2xl mx-auto">Masterfully crafted dishes using the finest seasonal ingredients sourced from our private gardens and artisan producers.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Main Item Card -->
+<div class="bg-[#1A1A1A] p-8 rounded-[1.5rem] border border-[#D9C5B2]/10 hover:border-primary/40 transition-all duration-500 group flex flex-col justify-between">
+<div class="aspect-square rounded-xl overflow-hidden mb-8">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Glistening roasted rack of lamb with mint pea puree and rosemary jus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-9dJSPQaiIYv5cUHD1FjY55vBMij1nyaia174Ct0KwB9DpqfJSj7_tuOMjPYpqbFqKeWwl7vTyRH66Jg3ZiG7clYKudadPiCkrfCBHPTwM48DLcbzyUy-QPcpX02zU30O8n_V2iDiuWA3j61jk3KJSXLQu8Z_gd6_YJUsMQx81zlVN8yO73PBB7xEjIfujzQW0Cc2omNyMetYcBcj13bF-eueDtBARI7Ql5K7UcDn7_7sZQ_ydI7dAvukzxIhC-8X7GKOPsXPsn8"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-on-surface">Rack of Lamb</h4>
+<span class="text-primary-fixed-dim font-headline-md">62</span>
+</div>
+<p class="text-tertiary font-body-md">Herb-crusted New Zealand lamb, smoked aubergine, mint jus, fondant potato.</p>
+</div>
+</div>
+<div class="bg-[#1A1A1A] p-8 rounded-[1.5rem] border border-[#D9C5B2]/10 hover:border-primary/40 transition-all duration-500 group flex flex-col justify-between">
+<div class="aspect-square rounded-xl overflow-hidden mb-8">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Grilled wild salmon fillet with asparagus spears and hollandaise sauce" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMG1VGT8dKhwsxmizoX21KgRfIPo2LaGdFcByFPHyaEz78PCEPmBysgC-A0U1_m0_OwgPF97q5YYVU5ucMZ9q52gMEppCtiHrYT1DoP1wWtF2F1ReE8EKkILg77cqh90d7MZKK3W79qMqeT9f9qqlfId6xUhWkPWs8fkToy5C2Ug7hKRx7-RXB4Go0sIZH-JQ7lhjuzZCbgwZiwqFYzexAjEi3_cZV5QAApYQ9S5pTC88J3FzzM5qcbHGKxAqXPqjoO0B7wdvnWL0"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-on-surface">Wild Atlantic Salmon</h4>
+<span class="text-primary-fixed-dim font-headline-md">54</span>
+</div>
+<p class="text-tertiary font-body-md">Cedar-planked salmon, asparagus spears, saffron hollandaise, wild rice medley.</p>
+</div>
+</div>
+<div class="bg-[#1A1A1A] p-8 rounded-[1.5rem] border border-[#D9C5B2]/10 hover:border-primary/40 transition-all duration-500 group flex flex-col justify-between lg:row-span-1">
+<div class="aspect-square rounded-xl overflow-hidden mb-8">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Creamy wild mushroom risotto topped with shaved black truffles and fresh herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLxpyxLPxX_YJjTACxnTmo06fzyWkSQQfZcHybpOUHto8QmxKNpKFsqasbOeDUzyeDOZsCNn8_BLF9gVaC41gjL7cS7ZZ8hysFfvkxTOyE-C6fmwkEC-4eBhWvQ8qPB0G-7e9trf1r1QuiYH5mVFxOYiA8L2ccIylWn6o6M4GnaCrzD8IJLa8kHy0nIL0hmwMsyAxK2uUb_nHKOyTGMVQOSD7Vtxynfj5kA65nA7LYL9aib3LX-ha1jvphzg9o7DbVMwQeWDXJMV4"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-on-surface">Truffle Risotto</h4>
+<span class="text-primary-fixed-dim font-headline-md">48</span>
+</div>
+<p class="text-tertiary font-body-md">Acquerello rice, forest mushrooms, winter truffle shavings, 24-month grana padano.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Desserts - Asymmetric Layout -->
+<section class="max-w-screen-xl mx-auto px-8 py-section-gap overflow-hidden" id="desserts">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="order-2 lg:order-1 space-y-12">
+<h3 class="font-display-lg text-[#C5A059]">Les Desserts</h3>
+<div class="space-y-12">
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<h4 class="font-headline-md text-on-surface">Valrhona Chocolate Fondant</h4>
+<span class="text-primary-fixed-dim font-body-lg">22</span>
+</div>
+<p class="text-tertiary font-body-md italic">Liquid gold center, Madagascar vanilla bean gelato, hazelnut praline.</p>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<h4 class="font-headline-md text-on-surface">Citrus Pavlova</h4>
+<span class="text-primary-fixed-dim font-body-lg">18</span>
+</div>
+<p class="text-tertiary font-body-md italic">Meringue cloud, blood orange curd, pomelo, mint crystal.</p>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<h4 class="font-headline-md text-on-surface">Grand Marnier Soufflé</h4>
+<span class="text-primary-fixed-dim font-body-lg">26</span>
+</div>
+<p class="text-tertiary font-body-md italic">Baked to order, orange zest, warm crème anglaise (allow 20 minutes).</p>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 grid grid-cols-2 gap-4">
+<img class="w-full h-80 object-cover rounded-xl mt-12" data-alt="Exquisite chocolate dessert with gold leaf and edible flowers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx2Gi9lUwRyCxHb0dUtkbIRs8YbAJ2DZJwkH2X6cNRbXxxHA-kYEcgIrTp-n76BmkknerNMZz5CwkGEQIF-AcUV9agm8_-eyZGmvla5qhPVqa0Tk44M1BoLcVcoUxTQcyBVgMFTnp76yggcs9JLisAw-cVw-DQhlwc30iwmzRY4OxgPOyyk1OZa3gjCWl5dbuyKadpQhKNDniYK7YojqsxlkKx4HH7VMRxRfQXw4xqEq9Gtd4JG_FjyY0-JUPdGBbdiqVcDgOcxyM"/>
+<img class="w-full h-80 object-cover rounded-xl" data-alt="A slice of layered strawberry cheesecake with fresh fruit topping" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2lxH1b9U-Wq69G4gdblQ0paooEr8GPNKB6wWiHcijRWoeC97FEYmJ096eaTFh3w2u9ZUwd3mcONIDNlho7ZwWIBXzrVRs7bVAhtzOsoEy16bEdQM-fYyQ9bJIHn9EffNFJB9ShXqyDyaQhp5Yz_NeSMgp48SD62iuh4Gz8gXjv9Ld7tn5C979Z9PO8xePObLB7pK3T-ypLhpz_ZIOncrieedPPx1qI6IufqGSJaPQ6jE1_PENam0CtWkkXpYzMKiub96TJtrvBag"/>
+</div>
+</div>
+</section>
+<!-- Drinks - Glassmorphism List -->
+<section class="relative py-section-gap overflow-hidden" id="drinks">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 grayscale" data-alt="Blurred background of a dark wooden bar with bottles and warm backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS8ipottQ9W5iuy5qDGWsERKJNlU2iVH4mUlkVzJD5FgicxoE88amS0NYtZeqSioG13uujUdVRqeA6L8UMJkAdTNncDRKQzwPSyxkr4q9eCs_N9C7C0SNPJyKO10A9FXYD08h5aiQF8epdY1XkOlqTjC6hqSNAFmcyBn-ADCr9vtdLECNCWxKoNxKc8kYnR8N6Ax4BLashiIxktBQl_12o0xWSr1PvqnnMeT_mdkOnCzJxShM1z_vp5w_VaVHxCCwwzd6KNKBKnZU"/>
+<div class="absolute inset-0 bg-[#0A0A0A]/80"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto px-8">
+<div class="text-center mb-20">
+<h3 class="font-display-lg text-[#C5A059]">Sommelier's Selection</h3>
+</div>
+<div class="space-y-16">
+<div>
+<h4 class="font-label-lg tracking-[0.3em] uppercase text-[#C5A059] mb-8 border-b border-[#C5A059]/20 pb-2">Vintage Champagnes</h4>
+<div class="grid gap-6">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-body-lg">Dom Pérignon Plénitude 2, 2003</span>
+<span class="font-headline-md text-primary-fixed-dim">850</span>
+</div>
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-body-lg">Krug Grande Cuvée 171ème Édition</span>
+<span class="font-headline-md text-primary-fixed-dim">420</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-label-lg tracking-[0.3em] uppercase text-[#C5A059] mb-8 border-b border-[#C5A059]/20 pb-2">Signature Cocktails</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+<div class="space-y-1">
+<div class="flex justify-between">
+<h5 class="font-headline-md text-on-surface">The Essence Royale</h5>
+<span class="text-primary-fixed-dim">28</span>
+</div>
+<p class="text-tertiary text-sm">Gin, hibiscus reduction, gold-flecked prosecco</p>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between">
+<h5 class="font-headline-md text-on-surface">Midnight Truffle</h5>
+<span class="text-primary-fixed-dim">32</span>
+</div>
+<p class="text-tertiary text-sm">Truffle-infused rye, sweet vermouth, smoked bitters</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-section-gap text-center px-8">
+<div class="max-w-xl mx-auto space-y-12 bg-surface-container p-16 rounded-[2rem] border border-[#D9C5B2]/5">
+<h3 class="font-display-lg text-[#C5A059]">Reserve Your Experience</h3>
+<p class="text-secondary font-body-lg">Limited tables available for this evening. We invite you to join us for an unforgettable culinary journey.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-[#C5A059] text-[#0A0A0A] px-10 py-4 font-label-lg rounded-sm hover:opacity-90 transition-all uppercase tracking-widest">Book A Table</button>
+<button class="border border-[#D9C5B2] text-[#D9C5B2] px-10 py-4 font-label-lg rounded-sm hover:bg-[#D9C5B2]/10 transition-all uppercase tracking-widest">Private Dining</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0A0A0A] text-[#C5A059] font-['Inter'] font-light tracking-tight text-sm border-t border-[#D9C5B2]/10">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 mt-20 max-w-screen-2xl mx-auto">
+<div class="space-y-6 text-center md:text-left mb-12 md:mb-0">
+<h2 class="font-['Noto_Serif'] text-[#C5A059] text-3xl italic">L'Essence</h2>
+<p class="text-[#D9C5B2]/60 max-w-xs">Elevating the art of dining into a multi-sensory masterpiece since 1994.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-12 md:mb-0">
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">Home</a>
+<a class="text-[#C5A059]" href="#">Menu</a>
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">Reservations</a>
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">About</a>
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="text-[#D9C5B2]/60">
+                © 2024 L'Essence Culinaire. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

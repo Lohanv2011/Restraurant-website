@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#c8c6c5",
+                        "primary-fixed-dim": "#e9c176",
+                        "tertiary-fixed": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#3b3b3b",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "secondary-container": "#544738",
+                        "primary-fixed": "#ffdea5",
+                        "tertiary-container": "#a7a5a5",
+                        "primary": "#e9c176",
+                        "secondary-fixed": "#f4dfcb",
+                        "on-primary-fixed": "#261900",
+                        "on-primary-container": "#4e3700",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-fixed-variant": "#524436",
+                        "background": "#131313",
+                        "outline-variant": "#4e4639",
+                        "surface-variant": "#353534",
+                        "surface-bright": "#3a3939",
+                        "secondary": "#d7c3b0",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-primary": "#775a19",
+                        "on-background": "#e5e2e1",
+                        "surface-tint": "#e9c176",
+                        "primary-container": "#c5a059",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-primary": "#412d00",
+                        "on-surface-variant": "#d1c5b4",
+                        "inverse-on-surface": "#313030",
+                        "secondary-fixed-dim": "#d7c3b0",
+                        "surface": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container": "#201f1f",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary": "#3a2e21",
+                        "outline": "#9a8f80",
+                        "surface-dim": "#131313",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#241a0e",
+                        "on-tertiary": "#313030",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-secondary-container": "#c8b5a3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max-width": "1280px",
+                        "gutter": "24px",
+                        "stack-lg": "48px",
+                        "margin-desktop": "64px",
+                        "section-gap": "120px",
+                        "margin-mobile": "16px",
+                        "stack-md": "24px",
+                        "stack-sm": "8px",
+                        "base-unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Noto Serif"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Noto Serif"],
+                        "label-lg": ["Inter"],
+                        "display-lg": ["Noto Serif"],
+                        "display-xl": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 w-full bg-[#0A0A0A]/90 backdrop-blur-md border-b border-[#D9C5B2]/10 shadow-[0_10px_40px_-15px_rgba(197,160,89,0.05)]">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="material-symbols-outlined text-[#C5A059] cursor-pointer hover:bg-[#1A1A1A] p-2 rounded-full transition-all" data-icon="menu">menu</span>
+<nav class="hidden md:flex gap-8 font-['Noto_Serif'] font-light tracking-widest">
+<a class="text-[#D9C5B2] hover:text-[#C5A059] transition-colors" href="#">Home</a>
+<a class="text-[#D9C5B2] hover:text-[#C5A059] transition-colors" href="#">Menu</a>
+<a class="text-[#C5A059] border-b border-[#C5A059] pb-1" href="#">Reservations</a>
+<a class="text-[#D9C5B2] hover:text-[#C5A059] transition-colors" href="#">About</a>
+</nav>
+</div>
+<div class="text-2xl font-serif italic text-[#C5A059]">L'Essence</div>
+<div class="flex items-center">
+<button class="bg-primary-container text-on-primary px-8 py-2 rounded-full font-label-lg uppercase tracking-widest hover:opacity-80 transition-all">Reserve</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-section-gap">
+<!-- Hero Section -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-stack-lg">
+<div class="relative h-[400px] rounded-xl overflow-hidden mb-16">
+<div class="absolute inset-0 bg-black/60 z-10 flex flex-col justify-center items-center text-center px-4">
+<h1 class="font-display-xl text-primary mb-4 italic">The Art of Dining</h1>
+<p class="font-body-lg text-secondary max-w-2xl">Secure your passage to an evening of unparalleled culinary artistry. Each table at L'Essence is a curated stage for sensory exploration.</p>
+</div>
+<img alt="Fine dining interior" class="w-full h-full object-cover" data-alt="Intimate dark-toned luxury restaurant interior with warm ambient lighting reflecting off polished crystal glassware and dark marble tables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgJGAZu3H7BheKK79f6yG1a6vXlW3e5VkkK0iWZCXs8lyaVsxEKkP7mEtX7UusSTNknG3YLy77Q-cdBsxCKpQ2fN069ZTgDyO50XdLRFDtydD9emkYYJG4lrk04azc5ck7fsIyOkCMvsCXSpXok7Z5TKoRRURnwaQqnVqbfDTRaLjBtzOgX4lUvSAgbt06KAGVAVxl4bli-psrLulrr_3GFhczqbYy5mJXVmpowAclpwBrWEP53tRdA5Tup1r73mwC_rvxFiW_gM8"/>
+</div>
+</section>
+<!-- Reservation Flow -->
+<section class="max-w-screen-xl mx-auto px-8 grid md:grid-cols-12 gap-16">
+<!-- Left: Information & Contact -->
+<div class="md:col-span-5 space-y-12">
+<div>
+<h2 class="font-headline-lg text-primary mb-6">Inquiries</h2>
+<p class="font-body-md text-on-surface-variant mb-8 leading-relaxed">
+                        For parties larger than 6 guests or for private events in our Sommelier's Cellar, please contact our concierge directly.
+                    </p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 text-secondary">
+<span class="material-symbols-outlined text-[#C5A059]" data-icon="call">call</span>
+<span class="font-label-lg">+33 1 45 67 89 00</span>
+</div>
+<div class="flex items-center gap-4 text-secondary">
+<span class="material-symbols-outlined text-[#C5A059]" data-icon="mail">mail</span>
+<span class="font-label-lg">concierge@lessence.com</span>
+</div>
+</div>
+</div>
+<div class="p-8 bg-[#1A1A1A] border border-[#D9C5B2]/10 rounded-xl shadow-2xl">
+<h3 class="font-headline-md text-primary-fixed-dim mb-4 italic">Hours of Service</h3>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li class="flex justify-between border-b border-[#D9C5B2]/5 pb-2">
+<span>Tuesday - Thursday</span>
+<span>18:00 - 22:30</span>
+</li>
+<li class="flex justify-between border-b border-[#D9C5B2]/5 pb-2">
+<span>Friday - Saturday</span>
+<span>17:30 - 23:30</span>
+</li>
+<li class="flex justify-between">
+<span>Sunday</span>
+<span>12:00 - 15:00</span>
+</li>
+</ul>
+</div>
+<div class="relative h-[250px] rounded-xl overflow-hidden grayscale contrast-125 opacity-60">
+<img alt="Restaurant Map" class="w-full h-full object-cover" data-alt="Abstract architectural map view of a sophisticated urban district in muted charcoal and gold tones" data-location="Paris" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4fUpmRBX8euXnzZ5OhHslQdeVUvSc6l_BRnhfu0H1MSkFUEK194lNA0572zB3LUNkfCJAqM2CaedlBtmvWRI47yxyC4_oAqqLFtbHOucDXEfYmRhCpxGjk6JjKn50vt6WnqHKwwcRgfdo-4sl5L9RKYxIJKUF7DaGo-8ke7cbDufRkfrcRL-VxgPn6VVEjAgucSTXxPoFu8kwq21c9rvskQxJ0KETU8HqwxRW6EmDfajGDlO3EsMhiNNu3rbpmx8i2DbBxXCV0CA"/>
+</div>
+</div>
+<!-- Right: Booking Form -->
+<div class="md:col-span-7 bg-[#1A1A1A] p-10 md:p-16 rounded-xl border border-[#D9C5B2]/10 shadow-2xl">
+<form class="space-y-10">
+<div class="grid md:grid-cols-2 gap-10">
+<div class="relative group">
+<label class="block font-label-sm text-secondary uppercase mb-2 tracking-widest">Full Name</label>
+<input class="w-full bg-transparent border-b border-[#D9C5B2]/20 focus:border-[#C5A059] focus:ring-0 py-3 text-on-surface transition-all placeholder:text-[#D9C5B2]/20" placeholder="Jean-Luc Picard" type="text"/>
+</div>
+<div class="relative group">
+<label class="block font-label-sm text-secondary uppercase mb-2 tracking-widest">Phone Number</label>
+<input class="w-full bg-transparent border-b border-[#D9C5B2]/20 focus:border-[#C5A059] focus:ring-0 py-3 text-on-surface transition-all placeholder:text-[#D9C5B2]/20" placeholder="+33 ..." type="tel"/>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-10">
+<div class="relative group">
+<label class="block font-label-sm text-secondary uppercase mb-2 tracking-widest">Date</label>
+<div class="flex items-center border-b border-[#D9C5B2]/20 focus-within:border-[#C5A059]">
+<input class="w-full bg-transparent border-none focus:ring-0 py-3 text-on-surface transition-all" type="date"/>
+<span class="material-symbols-outlined text-[#C5A059] text-xl" data-icon="calendar_today">calendar_today</span>
+</div>
+</div>
+<div class="relative group">
+<label class="block font-label-sm text-secondary uppercase mb-2 tracking-widest">Time</label>
+<div class="flex items-center border-b border-[#D9C5B2]/20 focus-within:border-[#C5A059]">
+<select class="w-full bg-transparent border-none focus:ring-0 py-3 text-on-surface appearance-none transition-all">
+<option class="bg-[#1A1A1A]">18:00</option>
+<option class="bg-[#1A1A1A]">19:30</option>
+<option class="bg-[#1A1A1A]">20:00</option>
+<option class="bg-[#1A1A1A]">21:15</option>
+</select>
+<span class="material-symbols-outlined text-[#C5A059] text-xl" data-icon="schedule">schedule</span>
+</div>
+</div>
+<div class="relative group">
+<label class="block font-label-sm text-secondary uppercase mb-2 tracking-widest">Guests</label>
+<div class="flex items-center border-b border-[#D9C5B2]/20 focus-within:border-[#C5A059]">
+<select class="w-full bg-transparent border-none focus:ring-0 py-3 text-on-surface appearance-none transition-all">
+<option class="bg-[#1A1A1A]">2 Guests</option>
+<option class="bg-[#1A1A1A]">3 Guests</option>
+<option class="bg-[#1A1A1A]">4 Guests</option>
+<option class="bg-[#1A1A1A]">5 Guests</option>
+<option class="bg-[#1A1A1A]">6 Guests</option>
+</select>
+<span class="material-symbols-outlined text-[#C5A059] text-xl" data-icon="group">group</span>
+</div>
+</div>
+</div>
+<div class="relative group">
+<label class="block font-label-sm text-secondary uppercase mb-2 tracking-widest">Special Requests</label>
+<textarea class="w-full bg-transparent border-b border-[#D9C5B2]/20 focus:border-[#C5A059] focus:ring-0 py-3 text-on-surface transition-all placeholder:text-[#D9C5B2]/20 h-32 resize-none" placeholder="Allergies, anniversaries, or specific table preferences..."></textarea>
+</div>
+<div class="flex items-center gap-4 py-4">
+<input class="rounded border-[#D9C5B2]/30 bg-transparent text-[#C5A059] focus:ring-[#C5A059]" id="terms" type="checkbox"/>
+<label class="font-label-sm text-[#D9C5B2]/60" for="terms">I acknowledge the 24-hour cancellation policy.</label>
+</div>
+<button class="w-full bg-[#C5A059] text-on-primary py-5 rounded-lg font-label-lg uppercase tracking-[0.2em] hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-[#C5A059]/10" type="submit">
+                        Confirm Reservation
+                    </button>
+</form>
+</div>
+</section>
+<!-- Gallery Tease -->
+<section class="max-w-screen-2xl mx-auto px-8 mt-section-gap grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="h-64 rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Exquisite plating of a minimalist dessert with gold leaf and edible flowers on a black ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp63QRdNljkOYrVOA6vL_hWmmc29CNWOwVIDCn_N4ggmWWYZivOeRZ0WJRepb91h2wFNZswnmqo73V--99aSr86tJoeqy0ViIpMH_m3EgqHpx0qLTRT8Xs8YMPUJ1RMf-eDFcnSmbxYJ9b-PsArIefkKzaHXoDSrBWryy75WWNMd1nOBY-I7yMPpFGJfL4-Z3MP-VUHOiXWAuL88P51MXql35KG09frc0O8jLfrJpjKEeoFee1ioRtO6hcTxozgGAuUSmuo0kVMSA"/>
+</div>
+<div class="h-64 rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Sommelier pouring deep red wine into a thin crystal glass in a dim-lit atmospheric cellar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADmGggmZlqtYMoq12Mt-K5VET0o46YgVRbv65PDFH4ESSOdDl0j8BKQUIkY5EARqkDTo3z5s6Iel-etDc0kRsP8TqpWN61MVcixuIqEJSmH-thGVyQ7U_b9VGlQzZrSdneO2J2oetr7jlPccxf3fj2Ub4vaa-rFREjWrrHYwG9BBLbRmsICfGOFasyI-gt9bN5K2ObNVbuT9fB8jdxLW-GQoU-kUIte0C0ZBpScLa-G8S6ZuDMiqfmI6JeE5tcbLD1lI0lNnw0Fcw"/>
+</div>
+<div class="h-64 rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a seared scallop dish with vibrant herb oil and microgreens on slate surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT2EZK6dZxKWiTa0MMfVGFnUwDC0v8jph5VaAB9I0ZWppz2EiFFG-_l8mOrbCVU959lT9vXoyBZY1Ooqh1tiEapEOCB0Xrna69nVPGTqFbW9NV5rSD5XmflIWRJ_KZjAS_IUA3yClkrELSxgmDJl7-zVGtF9ten3A3DX9NKe09Abr3DhoQxp_Ap12DRQkz_R6hwdW-x7Q1JYXNNIhXRzYTu5wBYubXB3wUB_dhS_fTCHOl-txNTxdeP9xGURpk5gDVqZxa1MGp3MY"/>
+</div>
+<div class="h-64 rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A focused chef working in a high-end kitchen with stainless steel surfaces and warm hanging lamps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGDteDUDbvxGKFxpyHK9ISm4DEtpdKCFTWP2SiyJz_edhF6GgE_A_CRpatOXiSuSf_mg4das2rZAMQmfp7RDyEPa01fX3zT-JhlsAGxYxJD8nk1GkbsI_Coaj-7WBOBM974pdiz38Ac1zkziFP2328W7SgyD2HaIBKCUSUIdo01inJIieuSxpOH1SgpV9gz6oFn3L7QhYcv72zmNXhMl8D_UpvKT6M6ukYWjPPcfpnsyHKBrYXa98u0gSi63KAM3zSVn3ojGfgjRA"/>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0A0A0A] border-t border-[#D9C5B2]/10">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 mt-20 max-w-screen-2xl mx-auto">
+<div class="flex flex-col items-center md:items-start mb-8 md:mb-0">
+<span class="font-['Noto_Serif'] text-[#C5A059] text-xl mb-4">L'Essence</span>
+<p class="font-['Inter'] font-light tracking-tight text-sm text-[#D9C5B2]/60">© 2024 L'Essence Culinaire. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-['Inter'] font-light tracking-tight text-sm">
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">Home</a>
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">Menu</a>
+<a class="text-[#C5A059] transition-colors" href="#">Reservations</a>
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">About</a>
+<a class="text-[#D9C5B2]/60 hover:text-[#C5A059] transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="flex gap-6 mt-8 md:mt-0">
+<span class="material-symbols-outlined text-[#D9C5B2]/40 hover:text-[#C5A059] cursor-pointer transition-colors" data-icon="public">public</span>
+<span class="material-symbols-outlined text-[#D9C5B2]/40 hover:text-[#C5A059] cursor-pointer transition-colors" data-icon="restaurant">restaurant</span>
+</div>
+</div>
+</footer>
+</body></html>
